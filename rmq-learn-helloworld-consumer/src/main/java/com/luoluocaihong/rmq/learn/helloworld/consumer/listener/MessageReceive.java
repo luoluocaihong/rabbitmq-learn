@@ -11,6 +11,12 @@ public class MessageReceive implements MessageListener {
     @Override
     public void onMessage(Message message) {
         System.out.println("I received message:" + new String(message.getBody()));
-        System.out.println("Message information:" + message.toString());
+
+        try {
+            Thread.sleep(50000);
+            System.out.println("Message information:" + message.toString());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
