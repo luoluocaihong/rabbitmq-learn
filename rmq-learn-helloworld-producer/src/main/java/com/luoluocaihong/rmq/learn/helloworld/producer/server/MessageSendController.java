@@ -19,6 +19,8 @@ public class MessageSendController {
     @GetMapping("/send")
     public String sendMessage() {
         String message = "Hello World!";
+        //内部convertMessageIfNecessary(message)
+        //MessageDeliveryMode deliveryMode = MessageDeliveryMode.PERSISTENT
         rabbitTemplate.convertAndSend(QUEUE_NAME, message);
 
         return message;
