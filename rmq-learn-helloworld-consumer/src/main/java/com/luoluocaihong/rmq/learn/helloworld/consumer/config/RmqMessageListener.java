@@ -1,6 +1,7 @@
 package com.luoluocaihong.rmq.learn.helloworld.consumer.config;
 
 import com.luoluocaihong.rmq.learn.helloworld.consumer.listener.MessageReceive;
+import org.springframework.amqp.core.MessageListener;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
@@ -18,7 +19,7 @@ public class RmqMessageListener {
     private ConnectionFactory connectionFactory;
 
     @Bean
-    public MessageReceive messageReceive() {
+    public MessageListener messageReceive() {
         return new MessageReceive();
     }
 
