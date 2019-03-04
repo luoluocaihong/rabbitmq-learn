@@ -13,7 +13,8 @@ public class MessageReceiveAckManual implements ChannelAwareMessageListener {
         try {
             System.out.println("I received message:" + new String(message.getBody()));
             System.out.println("Message information:" + message.toString());
-            int a = 10/0;
+            //int a = 10/0;
+            //Thread.sleep(20000);
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
         }
         catch(Exception e) {
