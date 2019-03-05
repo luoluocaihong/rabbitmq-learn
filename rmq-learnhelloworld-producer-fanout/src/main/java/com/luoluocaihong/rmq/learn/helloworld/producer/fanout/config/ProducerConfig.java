@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashMap;
+
 /**
  * Created by xh on 2019/3/5.
  */
@@ -36,6 +38,7 @@ public class ProducerConfig {
 
     @Bean
     Binding bindingExchangeTest(@Qualifier("testQueue") Queue testQueue, FanoutExchange fanoutExchange) {
-        return BindingBuilder.bind(testQueue).to(fanoutExchange);
+        //等价于 return BindingBuilder.bind(testQueue).to(fanoutExchange);  因为exchange类型为fanout时忽略routingKey
+        return new Binding(testQueue.getName(), Binding.DestinationType.QUEUE, fanoutExchange.getName(), "AA", new HashMap<String, Object>());
     }
 }
