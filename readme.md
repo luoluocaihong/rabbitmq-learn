@@ -3,13 +3,16 @@
 
 - ["Hello World!"](http://www.rabbitmq.com/tutorials/tutorial-one-java.html)   
    基于指定队列的消息生产、发送       
-   一个生产者,一个消费者,生产者基于指定队列发送消息,消费者基于指定队列监听、消费消息    
+   一个生产者,一个消费者,生产者基于指定队列发送消息,消费者基于指定队列监听、消费消息  
+   > A queue is only bound by the host's memory & disk limits, it's essentially a large message buffer.   
+   
    ```rmq.learn.helloworld.producer```: 通过提供的rest服务(/send)来触发发送消息的动作   
    ```rmq.learn.helloworld.consumer```:通过配置类```RmqMessageListener```创建```SimpleMessageListenerContainer```来添加一个指定的监听器```MessageReceive```
+           
             
 - [Work Queues](http://www.rabbitmq.com/tutorials/tutorial-two-java.html)  
    基于工作队列的消息生产、发送  
-   一个生产者,多个消费者    
+   一个生产者,多个消费者,多个消费者之间基于某种策略消费消息.消息只被消费一次.      
    
    > 工作队列(又名:任务队列)背后的主要思想是避免立即执行资源密集型任务并等待任务完成.
      相反,我们把任务安排在以后完成.我们将任务封装为消息并将其发送到队列.在后台运行的工作进程将弹出任务并最终执行作业.
@@ -33,16 +36,37 @@
    
    > It's a common mistake to miss the basicAck. It's an easy error, but the consequences are serious. Messages will be redelivered when your client quits (which may look like random redelivery), but RabbitMQ will eat more and more memory as it won't be able to release any unacked messages.
    
-   
-   再考虑一个场景,如果RabbitMQ Server挂了,那么消息会丢失吗?  
-   RabbitMQ支持**消息持久化**.通过设置持久化queue以及持久化的message delivery mode,尽可能地保证消息不丢失.当前版本这两个都是默认持久化的.    
+     再考虑一个场景,如果RabbitMQ Server挂了,那么消息会丢失吗?  
+     RabbitMQ支持**消息持久化**.通过设置持久化queue以及持久化的message delivery mode,尽可能地保证消息不丢失.当前版本这两个都是默认持久化的.    
    
    > Marking messages as persistent doesn't fully guarantee that a message won't be lost. Although it tells RabbitMQ to save the message to disk, there is still a short time window when RabbitMQ has accepted a message and hasn't saved it yet. Also, RabbitMQ doesn't do fsync(2) for every message -- it may be just saved to cache and not really written to the disk. The persistence guarantees aren't strong, but it's more than enough for our simple task queue. If you need a stronger guarantee then you can use publisher confirms.  
    
+  
+- [Publish/Subscribe](http://www.rabbitmq.com/tutorials/tutorial-three-java.html)  
+  发布订阅模式,广播模式.一个消息可以被多个消费者消费.  
+  **messaging model**  
+  > the producer can only send messages to an exchange. An exchange is a very simple thing. On one side it receives messages from producers and the other side it pushes them to queues. The exchange must know exactly what to do with a message it receives. 
+  
+  RabbitMQ引入Exchange,通过Exchange可以绑定多个queue.生产者将消息发送到指定的Exchange,而不需要关心发送给哪些queues.通过Exchange的类型,来决定消息推送给哪些queues.    
+  RabbitMQ支持的Exchange类型:direct|topic|fanout|headers|system,具体可以查看抽象类```org.springframework.amqp.core.ExchangeTypes```
+  - direct
+  - topic
+  - fanout 广播模式,绑定到exchange的所有queue都会接收到消息,但是同一个queue下只有一个消费者会接收到消息  
+  - headers
+  - system
+
+- [Routing](http://www.rabbitmq.com/tutorials/tutorial-four-java.html)  
+   > A binding is a relationship between an exchange and a queue. This can be simply read as: the queue is interested in messages from this exchange.  
+     We will use a direct exchange instead. The routing algorithm behind a direct exchange is simple - a message goes to the queues whose binding key exactly matches the routing key of the message.
+   
+   将queue绑定到exchange时可以指定binding_key.生产者可以发送特定binding_key的消息,RabbitMQ Server通过生产者发送的binding_key来精确匹配相同binding_key的queue.将消息路由到匹配的queues.   
+   前一个demo中用的fanout类型的exchange会忽略这个binding_key.这里使用direct类型的exchange  
+   一个queue可以配置多个binding_key,多个queue可以配置相同的binding_key.  
+   比如所有的queue都配置同一个binding_key,那么就和fanout类型的exchange实现的功能一样了,即广播消息给所有queues了.  
+   
+   适用场景:日志存储系统.  
+   生产者即日志产生者,生产者产生不同等级的日志,比如error,info,debug等等,通过设置不同的binding_key,将消息路由到不同的queues.以此对不同日志级别的日志进行处理.  
    
    
-   
-- [Publish/Subscribe](http://www.rabbitmq.com/tutorials/tutorial-three-java.html)
-- [Routing](http://www.rabbitmq.com/tutorials/tutorial-four-java.html)
 - [Topics](http://www.rabbitmq.com/tutorials/tutorial-five-java.html)
 - [Remote procedure call (RPC)](http://www.rabbitmq.com/tutorials/tutorial-six-java.html)
