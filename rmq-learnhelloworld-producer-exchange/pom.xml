@@ -10,7 +10,7 @@
         <version>2.2.0.BUILD-SNAPSHOT</version>
     </parent>
     <groupId>com.luoluocaihong.rabbitmq.learn.helloworld.producer</groupId>
-    <artifactId>rmq.learn.helloworld.producer.fanout</artifactId>
+    <artifactId>rmq.learn.helloworld.producer.exchange</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

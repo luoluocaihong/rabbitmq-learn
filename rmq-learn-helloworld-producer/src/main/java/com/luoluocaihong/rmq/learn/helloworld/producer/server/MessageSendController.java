@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageSendController {
     private final static String QUEUE_NAME = "hello";
 
+    private final static String EXCHANGE_NAME = "logs";
+
     @Autowired
     RabbitTemplate rabbitTemplate;
 
@@ -22,7 +24,13 @@ public class MessageSendController {
         //内部convertMessageIfNecessary(message)
         //MessageDeliveryMode deliveryMode = MessageDeliveryMode.PERSISTENT
         rabbitTemplate.convertAndSend(QUEUE_NAME, message);
+        return message;
+    }
 
+    @GetMapping("/sendbroadcast")
+    public String sendBroadcastMessage() {
+        String message = "Hello World ! everyone!!";
+        rabbitTemplate.convertAndSend(EXCHANGE_NAME, null, message);
         return message;
     }
 }

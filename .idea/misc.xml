@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/rmq-learn-helloworld-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/rmq-learn-helloworld-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/rmq-learn-helloworld-consumermanual/pom.xml" />
+        <option value="$PROJECT_DIR$/rmq-learn-helloworld-consumer-fanout/pom.xml" />
+        <option value="$PROJECT_DIR$/rmq-learnhelloworld-producer-fanout/pom.xml" />
+        <option value="$PROJECT_DIR$/rmq-learn-helloworld-consumer-exchange/pom.xml" />
+        <option value="$PROJECT_DIR$/rmq-learnhelloworld-producer-exchange/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

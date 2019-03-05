@@ -1,4 +1,4 @@
-package com.luoluocaihong.rmq.learn.helloworld.consumer.fanout.listener;
+package com.luoluocaihong.rmq.learn.helloworld.consumer.exchange.listener;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.context.annotation.Configuration;
@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Configuration;
 public class BroadcastMessageReceive {
     @RabbitListener(queues="hello")
     public void processHello(String str1) {
-        System.out.println("Receive Hello:"+str1);
+        System.out.println("BReceive Hello:"+str1);
     }
     @RabbitListener(queues="test")
     public void processTest(String str) {
-        System.out.println("Receive Test:"+str);
+        System.out.println("BReceive Test:"+str);
     }
     @RabbitListener(queues="fine")
     public void processFine(String str) {
-        System.out.println("Receive Fine:"+str);
+        System.out.println("BReceive Fine:"+str);
     }
 }

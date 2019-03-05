@@ -1,4 +1,4 @@
-package com.luoluocaihong.rmq.learn.helloworld.consumer.fanout;
+package com.luoluocaihong.rmq.learn.helloworld.consumer.exchange;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

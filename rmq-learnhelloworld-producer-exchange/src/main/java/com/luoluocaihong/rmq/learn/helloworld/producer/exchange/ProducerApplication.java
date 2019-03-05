@@ -1,4 +1,4 @@
-package com.luoluocaihong.rmq.learn.helloworld.producer.fanout;
+package com.luoluocaihong.rmq.learn.helloworld.producer.exchange;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
