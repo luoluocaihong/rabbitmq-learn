@@ -1,0 +1,43 @@
+
+[
+squid:S106^"9Replace this use of System.out or System.err by a logger.(×öŠ‚şÿÿÿÿ8§şÚ•-
+‹squid:UselessImportCheck"`Remove this unused import 'com.luoluocaihong.rmq.learn.helloworld.producer.exchange.dto.Person'.(š–Íñ8ş™³•-
+ksquid:UselessImportCheck"@Remove this unused import 'org.springframework.beans.BeanUtils'.(ŠğÄÜ8…½à‹•-
+V
+squid:S106V"9Replace this use of System.out or System.err by a logger.(À¸ü8Èº§·•-
+|squid:UselessImportCheck"LRemove this unused import 'com.rabbitmq.tools.jsonrpc.JacksonJsonRpcMapper'.(Ë¯áòüÿÿÿÿ8œÓ²‹•-
+wsquid:UselessImportCheck
+"LRemove this unused import 'org.springframework.amqp.core.MessageProperties'.(Í¦’‹8»®ª·•-
+vsquid:ModifiersOrderCheck "EReorder the modifiers to comply with the Java Language Specification.(¦ÎòÇüÿÿÿÿ8¤€´å”-
+Zsquid:UselessImportCheck"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8§¼ş·•-
+V
+squid:S106c"9Replace this use of System.out or System.err by a logger.(Êºä‰8Èº§·•-
+isquid:UselessImportCheck">Remove this unused import 'org.springframework.lang.Nullable'.(—Ùë8–‹Ô•-
+[
+squid:S106g"9Replace this use of System.out or System.err by a logger.(Æ¬÷İøÿÿÿÿ8çˆñ‘•-
+qsquid:ModifiersOrderCheck&"EReorder the modifiers to comply with the Java Language Specification.(œƒÒ°8ÒÕ´…•-
+qsquid:ModifiersOrderCheck$"EReorder the modifiers to comply with the Java Language Specification.(Ü ÏÇ8íâ®å”-
+V
+squid:S106h"9Replace this use of System.out or System.err by a logger.(˜‰ãÃ8Èº§·•-
+hsquid:UselessImportCheck"=Remove this unused import 'com.rabbitmq.tools.json.JSONUtil'.(—§²8ã½ã‡•-
+ysquid:UselessImportCheck"IRemove this unused import 'com.fasterxml.jackson.databind.util.BeanUtil'.(Èîæ˜ûÿÿÿÿ8ïƒĞ‹•-
+[
+squid:S106_"9Replace this use of System.out or System.err by a logger.(ï»ı‚üÿÿÿÿ8øÍÛ•-
+osquid:UselessImportCheck"ERemove this unused import 'org.springframework.util.CollectionUtils'.(åå…K8¿ñû‹•-
+msquid:UselessImportCheck	"BRemove this unused import 'org.springframework.amqp.core.Message'.(à¡¸8»®ª·•-
+[
+squid:S106`"9Replace this use of System.out or System.err by a logger.(¬šÎ©úÿÿÿÿ8øÍÛ•-
+gsquid:UselessImportCheck"<Remove this unused import 'com.alibaba.fastjson.JSONObject'.(äıµ8ş™³•-
+^squid:UselessImportCheck".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8ş™³•-
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(å»»…ûÿÿÿÿ
+isquid:ModifiersOrderCheck""EReorder the modifiers to comply with the Java Language Specification.(ş€Ã
+V
+squid:S106Y"9Replace this use of System.out or System.err by a logger.(¾ı²ª8Èº§·•-
+[
+squid:S106a"9Replace this use of System.out or System.err by a logger.(õºè÷üÿÿÿÿ8øÍÛ•-
+U
+squid:S106f"9Replace this use of System.out or System.err by a logger.(“¥¹8åï‹•-
+hsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(ÒşÀ08‘áƒ¸•-
+zsquid:UselessImportCheck"JRemove this unused import 'ch.qos.logback.core.util.StringCollectionUtil'.(ù™½¬ıÿÿÿÿ8ëÀû‹•-
+V
+squid:S106b"9Replace this use of System.out or System.err by a logger.(À“ú˜8øÍÛ•-

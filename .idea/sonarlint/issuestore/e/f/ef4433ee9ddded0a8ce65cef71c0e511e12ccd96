@@ -1,0 +1,19 @@
+
+~squid:S2273+"`Move this call to "wait()" into a synchronized block to be sure the monitor on "Thread" is held.(¤£Þ¶8Ýý³‚—-
+Ssquid:S2446,"0"notify" may not wake up the appropriate thread.(´³ÂÇúÿÿÿÿ8Ýý³‚—-
+…squid:S2273,"bMove this call to "notify()" into a synchronized block to be sure the monitor on "Thread" is held.(´³ÂÇúÿÿÿÿ8Ýý³‚—-
+V
+squid:S106
+"9Replace this use of System.out or System.err by a logger.(ôæü™8½ØÓ¾•-
+Osquid:S1612",Replace this lambda with a method reference.(…ÒÑˆøÿÿÿÿ8÷ÖÅ¾•-
+Jsquid:S1602",Remove useless curly braces around statement(¼¤³¬8÷ÖÅ¾•-
+ƒsquid:S2273-"eMove this call to "notifyAll()" into a synchronized block to be sure the monitor on "Thread" is held.(Ÿ„‰¬8Ýý³‚—-
+isquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(²ý…¦ûÿÿÿÿ8ÊÞÏ¾•-
+ssquid:S2236,"PRefactor the synchronisation mechanism to not use a Thread instance as a monitor(´³ÂÇúÿÿÿÿ8Ýý³‚—-
+Jsquid:S1612",Replace this lambda with a method reference.(¼¤³¬8÷ÖÅ¾•-
+nsquid:S2236-"PRefactor the synchronisation mechanism to not use a Thread instance as a monitor(Ÿ„‰¬8Ýý³‚—-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(Œý’è8‹¸Ð¾•-
+Osquid:S1602",Remove useless curly braces around statement(…ÒÑˆøÿÿÿÿ8÷ÖÅ¾•-
+Xsquid:S2274+":Remove this call to "wait" or move it into a "while" loop.(¤£Þ¶8Ýý³‚—-
+nsquid:S2236+"PRefactor the synchronisation mechanism to not use a Thread instance as a monitor(¤£Þ¶8Ýý³‚—-

@@ -9,9 +9,12 @@
         <module name="rmq-learn-helloworld-consumer-exchange" />
         <module name="rmq-learn-helloworld-consumer-fanout" />
         <module name="rmq-learn-helloworld-consumermanual" />
+        <module name="rmq-learn-helloworld-rpc-consumer" />
+        <module name="rmq-learn-helloworld-rpc-producer" />
         <module name="rmq-learnhelloworld-producer-exchange" />
         <module name="rmq-learnhelloworld-producer-fanout" />
         <module name="rmq.learn.helloworld.consumer" />
+        <module name="rmq.learn.helloworld.consumer.exchange" />
         <module name="rmq.learn.helloworld.producer" />
       </profile>
     </annotationProcessing>
@@ -19,9 +22,12 @@
       <module name="rmq-learn-helloworld-consumer-exchange" target="1.8" />
       <module name="rmq-learn-helloworld-consumer-fanout" target="1.8" />
       <module name="rmq-learn-helloworld-consumermanual" target="1.8" />
+      <module name="rmq-learn-helloworld-rpc-consumer" target="1.8" />
+      <module name="rmq-learn-helloworld-rpc-producer" target="1.8" />
       <module name="rmq-learnhelloworld-producer-exchange" target="1.8" />
       <module name="rmq-learnhelloworld-producer-fanout" target="1.8" />
       <module name="rmq.learn.helloworld.consumer" target="1.8" />
+      <module name="rmq.learn.helloworld.consumer.exchange" target="1.8" />
       <module name="rmq.learn.helloworld.producer" target="1.8" />
     </bytecodeTargetLevel>
   </component>

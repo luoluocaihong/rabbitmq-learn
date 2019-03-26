@@ -1,12 +1,12 @@
 package com.luoluocaihong.rmq.learn.helloworld.consumer.exchange.listener;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by xh on 2019/3/5.
  */
-@Configuration
+@Service
 public class BroadcastMessageReceive {
     @RabbitListener(queues="hello")
     public void processHello(String str1) {

@@ -1,6 +1,6 @@
 
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ç³Ÿ–8É†‹º”-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(û« µÿÿÿÿÿ8¨Â§¾”-
 [
 squid:S106"9Replace this use of System.out or System.err by a logger.(ëÌûƒýÿÿÿÿ8É†‹º”-
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(û« µÿÿÿÿÿ8¨Â§¾”-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ç³Ÿ–8É†‹º”-

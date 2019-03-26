@@ -1,4 +1,4 @@
-package com.luoluocaihong.rmq.learn.helloworld.producer.exchange.dto;
+package com.luoluocaihong.rmq.learn.helloworld.consumer.exchange.dto;
 
 import java.io.Serializable;
 
@@ -14,7 +14,9 @@ public class Person implements Serializable {
 
     private String job;
 
+    public Person() {
 
+    }
     public Person(Long id, String name, Long age, String job) {
         this.id = id;
         this.name = name;

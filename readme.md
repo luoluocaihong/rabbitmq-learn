@@ -5,10 +5,7 @@
    基于指定队列的消息生产、发送       
    一个生产者,一个消费者,生产者基于指定队列发送消息,消费者基于指定队列监听、消费消息  
    > A queue is only bound by the host's memory & disk limits, it's essentially a large message buffer.   
-   
-   ```rmq.learn.helloworld.producer```: 通过提供的rest服务(/send)来触发发送消息的动作   
-   ```rmq.learn.helloworld.consumer```:通过配置类```RmqMessageListener```创建```SimpleMessageListenerContainer```来添加一个指定的监听器```MessageReceive```
-           
+          
             
 - [Work Queues](http://www.rabbitmq.com/tutorials/tutorial-two-java.html)  
    基于工作队列的消息生产、发送  
@@ -31,8 +28,10 @@
    - MANUAL 手动回复
    - AUTO 自动回复,当前版本默认AUTO 
    
-   ```rmq.learn.helloworld.consumer```: 默认auto模式  
-   ```rmq.learn.helloworld.consumermanual```: manual模式.手动模式必须要注意,必须用接收消息的channel来发送ack.    
+   注意,如果关闭回复,比如配置```spring.rabbitmq.listener.simple.acknowledge-mode=none```,此时如果在程序中手动回复ack消息会报错,因为此时channel已经关闭:  
+   ```aidl
+    2019-03-05 19:07:56.223 ERROR 16016 --- [.16.22.114:5672] o.s.a.r.c.CachingConnectionFactory       : Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - unknown delivery tag 1, class-id=60, method-id=80)
+   ```
    
    > It's a common mistake to miss the basicAck. It's an easy error, but the consequences are serious. Messages will be redelivered when your client quits (which may look like random redelivery), but RabbitMQ will eat more and more memory as it won't be able to release any unacked messages.
    
@@ -49,13 +48,15 @@
   
   RabbitMQ引入Exchange,通过Exchange可以绑定多个queue.生产者将消息发送到指定的Exchange,而不需要关心发送给哪些queues.通过Exchange的类型,来决定消息推送给哪些queues.    
   RabbitMQ支持的Exchange类型:direct|topic|fanout|headers|system,具体可以查看抽象类```org.springframework.amqp.core.ExchangeTypes```
-  - direct
+  - direct 定向的
   - topic
   - fanout 广播模式,绑定到exchange的所有queue都会接收到消息,但是同一个queue下只有一个消费者会接收到消息  
   - headers
   - system
 
-- [Routing](http://www.rabbitmq.com/tutorials/tutorial-four-java.html)  
+- [Routing](http://www.rabbitmq.com/tutorials/tutorial-four-java.html)    
+   Direct Exchange  
+   
    > A binding is a relationship between an exchange and a queue. This can be simply read as: the queue is interested in messages from this exchange.  
      We will use a direct exchange instead. The routing algorithm behind a direct exchange is simple - a message goes to the queues whose binding key exactly matches the routing key of the message.
    
@@ -65,8 +66,17 @@
    比如所有的queue都配置同一个binding_key,那么就和fanout类型的exchange实现的功能一样了,即广播消息给所有queues了.  
    
    适用场景:日志存储系统.  
-   生产者即日志产生者,生产者产生不同等级的日志,比如error,info,debug等等,通过设置不同的binding_key,将消息路由到不同的queues.以此对不同日志级别的日志进行处理.  
+   生产者即日志产生者,生产者产生不同等级的日志,比如error,warn,info,debug等等,通过设置不同的binding_key,将消息路由到不同的queues.以此对不同日志级别的日志进行处理.  
    
    
-- [Topics](http://www.rabbitmq.com/tutorials/tutorial-five-java.html)
+- [Topics](http://www.rabbitmq.com/tutorials/tutorial-five-java.html)  
+   Topic Exchange    
+   > The logic behind the topic exchange is similar to a direct one - a message sent with a particular routing key will be delivered to all the queues that are bound with a matching binding key. However there are two important special cases for binding keys:   
+     star(*) can substitute for exactly one word.    
+     hash(#) can substitute for zero or more words.   
+
+     binding_key规则:由点分隔的一组单词列表,支持通配符,*匹配单词,#匹配零或多个单词.最大不能超过255个字节.  
+     比如binding_key1=```*.orange.*```,binding_key2=```lazy.#```,那么```lazy.orange.rabbit```可以匹配上着两个binding_key.  
+     
+   
 - [Remote procedure call (RPC)](http://www.rabbitmq.com/tutorials/tutorial-six-java.html)

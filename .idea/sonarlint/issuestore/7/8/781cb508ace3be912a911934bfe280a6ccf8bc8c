@@ -1,0 +1,10 @@
+
+Qsquid:S1481".Remove this unused "readValue" local variable.(Šƒ¶Ÿýÿÿÿÿ8Ó ñ„–-
+Fsquid:S1148+"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Ó ñ„–-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ÿ›²¼úÿÿÿÿ8Ó ñ„–-
+Fsquid:S1604"(Make this anonymous inner class a lambda(Õšòë8¶­Ü„–-
+nsquid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(÷ËÛ†ùÿÿÿÿ8Ï¡Óˆ–-
+dsquid:S2142*"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Ó ñ„–-
+[
+squid:S106<"9Replace this use of System.out or System.err by a logger.(âÇÝ½ÿÿÿÿÿ8îûÅˆ–-
+Fsquid:S1604$"(Make this anonymous inner class a lambda(ªœ¨ù8Ó ñ„–-

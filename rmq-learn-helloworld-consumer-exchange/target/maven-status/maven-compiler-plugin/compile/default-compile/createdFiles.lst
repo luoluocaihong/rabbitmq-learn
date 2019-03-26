@@ -1,4 +1,6 @@
-com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\config\ConsumerConfig.class
 com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\ConsumerApplication.class
+com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\listener\Test.class
+com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\listener\TopicMessageReceive.class
+com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\config\ConsumerConfig.class
 com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\listener\DirectMessageReceive.class
-com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\listener\BroadcastMessageReceive.class
+com\luoluocaihong\rmq\learn\helloworld\consumer\exchange\dto\Person.class

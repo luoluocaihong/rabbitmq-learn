@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/rmq-learn-helloworld-consumer-exchange" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rmq-learn-helloworld-consumermanual" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rmq-learn-helloworld-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rmq-learn-helloworld-rpc-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rmq-learn-helloworld-rpc-producer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rmq-learnhelloworld-producer-exchange" charset="UTF-8" />
   </component>
 </project>

@@ -3,10 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/rabbitmq-learn.iml" filepath="$PROJECT_DIR$/.idea/rabbitmq-learn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-consumer-exchange/rmq-learn-helloworld-consumer-fanout.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-consumer-exchange/rmq-learn-helloworld-consumer-fanout.iml" />
+      <module fileurl="file://E:\sourceCode\spring-cloud\3\rabbitmq-learn\rmq-learn-helloworld-consumer-exchange\rmq-learn-helloworld-consumer-fanout.iml" filepath="E:\sourceCode\spring-cloud\3\rabbitmq-learn\rmq-learn-helloworld-consumer-exchange\rmq-learn-helloworld-consumer-fanout.iml" />
       <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-consumermanual/rmq-learn-helloworld-consumermanual.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-consumermanual/rmq-learn-helloworld-consumermanual.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-rpc-consumer/rmq-learn-helloworld-rpc-consumer.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-rpc-consumer/rmq-learn-helloworld-rpc-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-rpc-producer/rmq-learn-helloworld-rpc-producer.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-rpc-producer/rmq-learn-helloworld-rpc-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/rmq-learnhelloworld-producer-exchange/rmq-learnhelloworld-producer-exchange.iml" filepath="$PROJECT_DIR$/rmq-learnhelloworld-producer-exchange/rmq-learnhelloworld-producer-exchange.iml" />
       <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-consumer/rmq.learn.helloworld.consumer.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-consumer/rmq.learn.helloworld.consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-consumer-exchange/rmq.learn.helloworld.consumer.exchange.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-consumer-exchange/rmq.learn.helloworld.consumer.exchange.iml" />
       <module fileurl="file://$PROJECT_DIR$/rmq-learn-helloworld-producer/rmq.learn.helloworld.producer.iml" filepath="$PROJECT_DIR$/rmq-learn-helloworld-producer/rmq.learn.helloworld.producer.iml" />
     </modules>
   </component>
